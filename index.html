@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Compound Interest Calculator</title>
+    <link rel="stylesheet" href="hw1.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+    />
+    <script src="hw1.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Compound Interest Calculator</h1>
+    </header>
+
+    <section id="contentSection">
+      <form id="interestForm">
+        <label for="principal">Principal ($):</label>
+        <input type="number" id="principal" required /><br />
+
+        <label for="rate">Annual Interest Rate (%):</label>
+        <input type="number" id="rate" step="0.01" min="0" required /><br />
+
+        <label for="timesCompounded">Times Compounded per Year:</label>
+        <input type="number" id="timesCompounded" required /><br />
+
+        <label for="years">Number of Years:</label>
+        <input type="number" id="years" required /><br />
+
+        <button type="submit">Calculate</button>
+      </form>
+
+      <div id="totalAmountSection">
+        <h2>Total Amount</h2>
+        <p id="totalAmount"></p>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        &copy; 2024 Compound Interest Calculator |
+        <a
+          href="https://codesandbox.io/p/sandbox/hw1-compound-interest-calculator-gp4jjh?layout=%257B%2522sidebarPanel%2522%253A%2522EXPLORER%2522%252C%2522rootPanelGroup%2522%253A%257B%2522direction%2522%253A%2522horizontal%2522%252C%2522contentType%2522%253A%2522UNKNOWN%2522%252C%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522id%2522%253A%2522ROOT_LAYOUT%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522UNKNOWN%2522%252C%2522direction%2522%253A%2522vertical%2522%252C%2522id%2522%253A%2522cm0rfq15j0007356jy5eb12h5%2522%252C%2522sizes%2522%253A%255B100%255D%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522EDITOR%2522%252C%2522direction%2522%253A%2522horizontal%2522%252C%2522id%2522%253A%2522EDITOR%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL%2522%252C%2522contentType%2522%253A%2522EDITOR%2522%252C%2522id%2522%253A%2522cm0rfq15j0003356jdfypemxl%2522%257D%255D%257D%252C%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522SHELLS%2522%252C%2522direction%2522%253A%2522horizontal%2522%252C%2522id%2522%253A%2522SHELLS%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL%2522%252C%2522contentType%2522%253A%2522SHELLS%2522%252C%2522id%2522%253A%2522cm0rfq15j0004356j8y871phc%2522%257D%255D%257D%255D%257D%252C%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522DEVTOOLS%2522%252C%2522direction%2522%253A%2522vertical%2522%252C%2522id%2522%253A%2522DEVTOOLS%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL%2522%252C%2522contentType%2522%253A%2522DEVTOOLS%2522%252C%2522id%2522%253A%2522cm0rfq15j0006356jkcfhzpst%2522%257D%255D%257D%255D%252C%2522sizes%2522%253A%255B50%252C50%255D%257D%252C%2522tabbedPanels%2522%253A%257B%2522cm0rfq15j0003356jdfypemxl%2522%253A%257B%2522tabs%2522%253A%255B%257B%2522id%2522%253A%2522cm0rfq15j0002356jc7d6oj85%2522%252C%2522mode%2522%253A%2522permanent%2522%252C%2522type%2522%253A%2522FILE%2522%252C%2522filepath%2522%253A%2522%252Fstyles.css%2522%252C%2522state%2522%253A%2522IDLE%2522%257D%252C%257B%2522id%2522%253A%2522cm0rfyl9x0002356iytfx37b2%2522%252C%2522mode%2522%253A%2522permanent%2522%252C%2522type%2522%253A%2522FILE%2522%252C%2522filepath%2522%253A%2522%252Findex.html%2522%252C%2522state%2522%253A%2522IDLE%2522%252C%2522initialSelections%2522%253A%255B%257B%2522startLineNumber%2522%253A49%252C%2522startColumn%2522%253A10%252C%2522endLineNumber%2522%253A49%252C%2522endColumn%2522%253A10%257D%255D%257D%252C%257B%2522id%2522%253A%2522cm0tx2sun0002356iy08l4s4p%2522%252C%2522mode%2522%253A%2522permanent%2522%252C%2522type%2522%253A%2522FILE%2522%252C%2522initialSelections%2522%253A%255B%257B%2522startLineNumber%2522%253A69%252C%2522startColumn%2522%253A17%252C%2522endLineNumber%2522%253A69%252C%2522endColumn%2522%253A17%257D%255D%252C%2522filepath%2522%253A%2522%252Fhw1.css%2522%252C%2522state%2522%253A%2522IDLE%2522%257D%255D%252C%2522id%2522%253A%2522cm0rfq15j0003356jdfypemxl%2522%252C%2522activeTabId%2522%253A%2522cm0rfyl9x0002356iytfx37b2%2522%257D%252C%2522cm0rfq15j0006356jkcfhzpst%2522%253A%257B%2522id%2522%253A%2522cm0rfq15j0006356jkcfhzpst%2522%252C%2522activeTabId%2522%253A%2522cm0rg1x6a004j356i8h0p0i6p%2522%252C%2522tabs%2522%253A%255B%257B%2522id%2522%253A%2522cm0rfq15j0005356jz5pjg1xm%2522%252C%2522mode%2522%253A%2522permanent%2522%252C%2522type%2522%253A%2522UNASSIGNED_PORT%2522%252C%2522port%2522%253A0%257D%252C%257B%2522type%2522%253A%2522SANDBOX_INFO%2522%252C%2522isCloud%2522%253Afalse%252C%2522id%2522%253A%2522cm0rg1x6a004j356i8h0p0i6p%2522%252C%2522mode%2522%253A%2522permanent%2522%257D%255D%257D%252C%2522cm0rfq15j0004356j8y871phc%2522%253A%257B%2522tabs%2522%253A%255B%255D%252C%2522id%2522%253A%2522cm0rfq15j0004356j8y871phc%2522%257D%257D%252C%2522showDevtools%2522%253Atrue%252C%2522showShells%2522%253Afalse%252C%2522showSidebar%2522%253Atrue%252C%2522sidebarPanelSize%2522%253A15%257D"
+          target="_blank"
+          >Source Code</a
+        >
+      </p>
+    </footer>
+
+    <div id="gifPopup" class="popup">
+      <img
+        src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExd21qcjJndDI4eGdreXV3M3p1Y2FuOHlzMjU5ajVsZTZ2OTNnZTZrOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/YnkMcHgNIMW4Yfmjxr/giphy.gif"
+        alt="Congrats!"
+        class="popup-gif"
+      />
+    </div>
+  </body>
+</html>
+
+<!-- Principle payment | text input
+     Period | text input
+     APR | slider 
+     Years | text input
+     Interest is .....
+     Total is .... 
+-->
