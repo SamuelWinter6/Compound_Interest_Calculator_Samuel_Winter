@@ -1,0 +1,16 @@
+{
+    "name": "html-css",
+    "version": "1.0.0",
+    "description": "Compount Interest Calculator for CMSI 2021",
+    "main": "index.html",
+    "scripts": {
+      "start": "serve"
+    },
+    "keywords": ["html", "css", "js"],
+    "author": "Samuel Winter",
+    "license": "MIT",
+    "devDependencies": {
+      "serve": "11.2.0"
+    }
+  }
+  

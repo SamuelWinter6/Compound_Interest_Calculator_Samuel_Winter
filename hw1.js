@@ -4,7 +4,7 @@ document
     event.preventDefault();
 
     const principal = parseFloat(document.getElementById("principal").value);
-    const rate = parseFloat(document.getElementById("rate").value) / 100;
+    const rate = parseFloat(document.getElementById("rateSlider").value) / 100;
     const timesCompounded = parseFloat(
       document.getElementById("timesCompounded").value
     );
@@ -22,14 +22,20 @@ document
       return;
     }
 
-    const amount =
+    const totalAmount =
       principal * Math.pow(1 + rate / timesCompounded, timesCompounded * years);
+    const interest = totalAmount - principal;
 
-    document.getElementById("totalAmount").textContent = `$${amount.toFixed(
+    document.getElementById("totalAmount").innerHTML = `
+    <p style="margin-bottom: 10px;"><strong>Total Interest (Interest Only):</strong> $${interest.toFixed(
       2
-    )}`;
-    const totalAmountSection = document.getElementById("totalAmountSection");
-    totalAmountSection.classList.add("visible");
+    )}</p>
+    <p><strong>Total Amount (Principal + Interest):</strong> $${totalAmount.toFixed(
+      2
+    )}</p>
+  `;
+
+    document.getElementById("totalAmountSection").classList.add("visible");
 
     const gifPopup = document.getElementById("gifPopup");
     gifPopup.style.display = "block";
@@ -43,3 +49,7 @@ document
       gifPopup.style.display = "none";
     }, 2000);
   });
+
+document.getElementById("rateSlider").addEventListener("input", function () {
+  document.getElementById("rateValue").textContent = `${this.value}%`;
+});
